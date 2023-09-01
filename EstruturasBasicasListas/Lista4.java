@@ -112,13 +112,15 @@ public class Lista4 {
             System.out.println("Digite uma Letra");
             char caractere = in.next().toLowerCase().charAt(0);
             switch (caractere) {
-                case 'a', 'e', 'i','o','u':
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
                     System.out.println("O caractere é vogal");
                     break;
-    
-    
                 default:
-                 System.out.println("O caractere é consoante");
+                    System.out.println("O caractere é consoante");
                     break;
             }
     
