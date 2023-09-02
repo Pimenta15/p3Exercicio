@@ -81,4 +81,5 @@ public class Endereco {
         return "\n\trua=" + rua + "\n\tnumero=" + numero + "\n\tcomplemento=" + complemento + "\n\tbairro=" + bairro
                 +"\n\tcidade=" + cidade + "\n\tuf=" + uf + "\n\tcep=" + cep ;
     }
+    
 }
