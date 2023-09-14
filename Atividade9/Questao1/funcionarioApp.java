@@ -3,7 +3,7 @@ package Atividade9.Questao1;
 
 import java.util.ArrayList;
 
-public class main {
+public class funcionarioApp {
     public static void main(String[] args) {
           ArrayList<Funcionario> lista = new ArrayList<>();
 
