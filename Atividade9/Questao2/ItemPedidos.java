@@ -27,6 +27,6 @@ public class ItemPedidos {
     }
     @Override
     public String toString() {
-        return "ItemPedidos [nome=" + nome + "\n preco=" + preco + "]";
+        return "Item [nome=" + nome + "\n preco=" + preco + "]";
     }
 }   
