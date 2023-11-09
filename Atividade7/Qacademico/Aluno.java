@@ -7,7 +7,21 @@ public class Aluno {
     private double nota2;
     private double nota3;
     private double nota4;
+    
+    public String getCpf() {
+        return cpf;
+    }
 
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
     public Aluno(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
