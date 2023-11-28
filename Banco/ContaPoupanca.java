@@ -13,7 +13,9 @@ public class ContaPoupanca extends Conta {
     } 
 
     public double simularOperacao(int meses){
-       //error message
+       if (meses <= 0) {
+        throw new IllegalArgumentException("Quabtidade de meses não pode ser zero ou menor");
+       }
         for (int i = 1; i != meses; i++) {
             this.saldo += this.saldo+(taxaRendimento*this.saldo);
         }

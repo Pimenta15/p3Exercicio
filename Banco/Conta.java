@@ -1,6 +1,6 @@
 package Banco;
 
-import Atividade14.Questão6.SaldoInsuficienteException;
+
 
 public class Conta {
     private Integer agencia;
@@ -56,8 +56,9 @@ public class Conta {
     }
     public int compareTo(Conta other) {
         
-        return this.cliente.compareTo(other.getCliente());
+        return this.conta.compareTo(other.getConta());
     }
+
     public void transferencia(Conta destinatario, double valor) throws Exception {
         if (this.compareTo(destinatario) == 0) { 
            throw new Exception("Impossivel realizar operação");
