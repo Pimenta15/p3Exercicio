@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta  {
 
     public double simularOperacao(int quantidadeMeses) {
         if (quantidadeMeses <= 0) {
-            throw new IllegalArgumentException("Quabtidade de meses não pode ser zero ou menor");
+            throw new IllegalArgumentException("Quantidade de meses não pode ser zero ou menor");
         }
 
         for (int i = 1; i <= quantidadeMeses; i++) {

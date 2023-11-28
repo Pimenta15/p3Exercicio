@@ -1,6 +1,6 @@
 package Banco;
 
-public class Cliente {
+public class Cliente implements Comparable<Cliente>{
     
     private String nome;
     private String endereco;

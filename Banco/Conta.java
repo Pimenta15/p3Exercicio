@@ -2,7 +2,7 @@ package Banco;
 
 
 
-public class Conta implements comparable <Cliente>{
+public class Conta implements Comparable <Conta>{
     private Integer agencia;
     private Integer conta;
     protected double saldo;
@@ -54,11 +54,7 @@ public class Conta implements comparable <Cliente>{
             return sacar;
         }
     }
-    public int compareTo(Conta other) {
-        
-        return this.conta.compareTo(other.getConta());
-    }
-
+    
     public void transferencia(Conta destinatario, double valor) throws Exception {
         if (this.compareTo(destinatario) == 0) { 
            throw new Exception("Impossivel realizar operação");
@@ -79,8 +75,15 @@ public class Conta implements comparable <Cliente>{
     }
 
     public void exibirSaldo(){
-        System.out.println("Nome:"+this.cliente.getNome();
+        System.out.println("Nome:"+this.cliente.getNome());
         System.out.println("Saldo:"+ this.saldo);
     }
+    @Override
+    public int compareTo(Conta other) {
+        
+        return this.conta.compareTo(other.getConta());
+    }
+    
+   
 
 }

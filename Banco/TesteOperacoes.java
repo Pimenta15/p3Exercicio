@@ -9,11 +9,11 @@ public class TesteOperacoes {
         List<Conta> listaContas = new ArrayList<>();
         int contas = 0;
     
-        public void criarConta(String nome, String endereco, String profissao,int agencia, String tipoConta){
+        public void criarConta(String nome, String endereco, String profissao,int conta,int agencia, String tipoConta){
             Cliente cadastro = new Cliente(nome, endereco, profissao);
             listaClientes.add(cadastro);
-            contas++;
-            if (tipoConta == "poupança"){
+            
+            if (tipoConta.compareTo("poupança")==0){
                 
                 ContaPoupanca novConta = new ContaPoupanca(agencia, contas, cadastro);
                 listaContas.add(novConta);
@@ -27,4 +27,5 @@ public class TesteOperacoes {
     public void realizarOperações(int agencia, int conta){
 
     }
+    
 }
