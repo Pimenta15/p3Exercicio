@@ -2,7 +2,7 @@ package Banco;
 
 
 
-public class Conta {
+public class Conta implements comparable <Cliente>{
     private Integer agencia;
     private Integer conta;
     protected double saldo;
@@ -79,6 +79,7 @@ public class Conta {
     }
 
     public void exibirSaldo(){
+        System.out.println("Nome:"+this.cliente.getNome();
         System.out.println("Saldo:"+ this.saldo);
     }
 
