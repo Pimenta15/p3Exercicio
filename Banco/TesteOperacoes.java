@@ -56,5 +56,55 @@ public class TesteOperacoes {
         }
 
     }
+         public void apresentarMenu() {
+        while (true) {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1. Criar conta");
+            System.out.println("2. Realizar operações");
+            System.out.println("3. Exibir saldo");
+            System.out.println("4. Sair");
+
+            int escolha = in.nextInt();
+            in.nextLine(); 
+            String nome, endereco, profissao, tipoConta;
+            int conta, agencia;
+            switch (escolha) {
+                case 1:
+                    System.out.println("Digite seu nome");
+                    nome = in.nextLine();
+                     System.out.println("Digite seu endereço");
+                    endereco = in.nextLine();
+                    System.out.println("Digite sua profissao");
+                    profissao = in.nextLine();
+                    System.out.println("Digite o número da conta");
+                    conta = in.nextInt();
+                    System.out.println("Digite o número da agencia");
+                    agencia = in.nextInt();
+                    System.out.println("Digite o tipo da conta");
+                    tipoConta =in.nextLine();
+                    criarConta(nome,endereco,profissao,conta,agencia,tipoConta); 
+                    break;
+                case 2:
+                    System.out.println("Digite o número da conta");
+                    conta = in.nextInt();
+                    System.out.println("Digite o número da agencia");
+                    agencia = in.nextInt();
+                    realizarOperacoes(agencia,conta);
+                    break;
+                case 3:
+                    System.out.println("Digite o número da conta");
+                    conta = in.nextInt();
+                    System.out.println("Digite o número da agencia");
+                    agencia = in.nextInt();
+                    exibirSaldo(agencia, conta);
+                    break;
+                case 4:
+                    System.out.println("Saindo do programa. Até mais!");
+                    return;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+    }
     
 }
