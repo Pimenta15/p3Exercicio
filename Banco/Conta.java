@@ -1,8 +1,10 @@
 package Banco;
 
+import Atividade14.Questão6.SaldoInsuficienteException;
+
 public class Conta {
-    private int agencia;
-    private int conta;
+    private Integer agencia;
+    private Integer conta;
     protected double saldo;
     private Cliente cliente;
     
@@ -44,16 +46,23 @@ public class Conta {
         
     }
 
-    public double saque(double sacar) {
+    public double saque(double sacar) throws Exception {
         if (sacar > this.saldo)  {
-            return 0;// retornar erro
+             throw new Exception("Saldo insuficiente para realizar o saque");
         }else{
             this.saldo = this.saldo-sacar;
             return sacar;
         }
     }
-
-    public void transferencia(Conta destinatario, double valor) {
+    public int compareTo(Conta other) {
+        
+        return this.cliente.compareTo(other.getCliente());
+    }
+    public void transferencia(Conta destinatario, double valor) throws Exception {
+        if (this.compareTo(destinatario) == 0) { 
+           throw new Exception("Impossivel realizar operação");
+            
+        }
         if (valor <= 0) {
             System.out.println("O valor da transferência deve ser maior que zero.");
             return;

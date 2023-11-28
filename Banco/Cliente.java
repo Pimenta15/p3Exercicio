@@ -11,6 +11,9 @@ public class Cliente {
         this.endereco = endereco;
         this.profissao = profissao;
     }
+    public int compareTo(Cliente other) {
+        return this.nome.compareTo(other.nome);
+    }
     
     public String getNome() {
         return nome;
