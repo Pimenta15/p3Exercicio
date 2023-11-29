@@ -17,7 +17,7 @@ public class TesteOperacoes {
     
         public static  void criarConta(String nome, String endereco, String profissao,int conta,int agencia, String tipoConta){
             Conta c = new Conta(agencia, conta, null);
-            if(!listaContas.contains(c)){
+            if(listaContas.contains(c)){
            Cliente cadastro = new Cliente(nome, endereco, profissao);
             listaClientes.add(cadastro);
             tipoConta.toLowerCase();
@@ -36,32 +36,34 @@ public class TesteOperacoes {
     }
 
     public static void realizarOperacoes(int agencia, int conta,int agencia2, int conta2) throws Exception{
-            int i;
+            int i,j;
+            boolean dest=false,rem=false;
             Conta c, c2;
             for(i=0;i<listaContas.size();i++){
                 if(listaContas.get(i).getConta()==conta &&listaContas.get(i).getAgencia()==agencia){
                     c = listaContas.get(i);
-                
-                    for(int j=0;j<listaContas.size();j++){
-                        if(listaContas.get(j).getConta()==conta2 &&listaContas.get(j).getAgencia()==agencia2){
-                            c2 = listaContas.get(j);
-                            System.out.println("Digite o valor a ser transferido");
-                            double valor = Scanner.nextDouble();
-                            c.transferencia(c2, valor);
-                            return;
-                        
-                        }else{
-                            System.out.println("Conta Destinataria não encontrado");
-                            return;
-                        }
-                        
-                        }
-                        }else{
-                            System.out.println("Conta remetente não encontrado");
-                            return;
-                        }
-                        }
+                    rem =true;
+                for(j=0;j<listaContas.size();j++){
+                if(listaContas.get(j).getConta()==conta2 &&listaContas.get(j).getAgencia()==agencia2){
+                    c2 = listaContas.get(j);
+                    System.out.println("Digite o valor a ser transferido");
+                        double valor = Scanner.nextDouble();
+                        c.transferencia(c2, valor);
+                        dest  = true;
+                }
+                  
+                }
+            
     }
+}
+if(rem == false){
+    System.out.println("Remetente não encontrada");
+}
+else if(dest==false){
+    System.out.println("Destinatario não encontrado");
+}
+
+}
     public static void exibirSaldo(int agencia,int conta){
         int i;
         Conta c;
@@ -97,7 +99,8 @@ public class TesteOperacoes {
             int escolha = Scanner.nextInt();
             Scanner.nextLine(); 
             String nome, endereco, profissao, tipoConta;
-            int conta, agencia, conta2, agencia2;
+            int conta, agencia, conta2, agencia2,f=-9;
+            
             switch (escolha) {
                 case 1:
                     System.out.println("Digite seu nome");
@@ -111,8 +114,18 @@ public class TesteOperacoes {
                     System.out.println("Digite o número da agencia");
                     agencia = Scanner.nextInt();
                     Scanner.nextLine();
+                    do{
                     System.out.println("Digite o tipo da conta");
-                    tipoConta =Scanner.nextLine().toLowerCase();
+                    System.out.println("1-Poupança");
+                    System.out.println("2-Corrente");
+                     f =Scanner.nextInt();
+                }while(f!=1&&f!=2);
+                if(f==1){
+                    tipoConta = "poupança";
+                }
+                else{
+                    tipoConta = "corrente";
+                }
                     criarConta(nome,endereco,profissao,conta,agencia,tipoConta); 
                     break;
                 case 2:
@@ -138,9 +151,19 @@ public class TesteOperacoes {
                     conta = Scanner.nextInt();
                     System.out.println("Digite o número da Agencia");
                     agencia = Scanner.nextInt();
+                    System.out.println("Digite o Valor a ser depositado");
+                    double val = Scanner.nextDouble();
+                    depositar(conta, agencia, val);
 
                 break;
                 case 5:
+                System.out.println("Digite o número da conta");
+                    conta = Scanner.nextInt();
+                    System.out.println("Digite o número da Agencia");
+                    agencia = Scanner.nextInt();
+                    System.out.println("Digite o Valor a ser sacado");
+                    double valo = Scanner.nextDouble();
+                    sacar(conta, agencia, valo);
                 break;
                 case 6:
                     System.out.println("Saindo do programa. Até mais!");
@@ -149,6 +172,32 @@ public class TesteOperacoes {
                     System.out.println("Opção inválida. Tente novamente.");
             }
         }
+    }
+    
+    public static void sacar(int conta, int a, double v) throws Exception{
+         int i;
+        Conta c;
+        for(i=0;i<listaContas.size();i++){
+            if(listaContas.get(i).getConta()==conta &&listaContas.get(i).getAgencia()==a){
+                c = listaContas.get(i);
+                c.saque(v) ;
+                return;
+            }
+        }
+
+    }
+
+    public static void depositar(int conta, int a, double v) throws Exception{
+         int i;
+        Conta c;
+        for(i=0;i<listaContas.size();i++){
+            if(listaContas.get(i).getConta()==conta &&listaContas.get(i).getAgencia()==a){
+                c = listaContas.get(i);
+                c.deposito(v) ;
+                return;
+            }
+        }
+
     }
 }
     

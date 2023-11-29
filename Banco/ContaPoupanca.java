@@ -16,8 +16,8 @@ public class ContaPoupanca extends Conta {
        if (meses <= 0) {
         throw new IllegalArgumentException("Quantidade de meses não pode ser zero ou menor");
        }
-        for (int i = 1; i != meses; i++) {
-            this.saldo += this.saldo+(taxaRendimento*this.saldo);
+        for (int i = 0; i != meses; i++) {
+            this.saldo = this.saldo+(taxaRendimento*this.saldo);
         }
 
         return this.saldo;
