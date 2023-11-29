@@ -48,14 +48,17 @@ public class TesteOperacoes {
                             System.out.println("Digite o valor a ser transferido");
                             double valor = Scanner.nextDouble();
                             c.transferencia(c2, valor);
+                            return;
                         
                         }else{
                             System.out.println("Conta Destinataria não encontrado");
+                            return;
                         }
                         
                         }
                         }else{
                             System.out.println("Conta remetente não encontrado");
+                            return;
                         }
                         }
     }
@@ -87,7 +90,9 @@ public class TesteOperacoes {
             System.out.println("1. Criar conta");
             System.out.println("2. Realizar operações");
             System.out.println("3. Exibir saldo");
-            System.out.println("4. Sair");
+            System.out.println("4. Depositar");
+            System.out.println("5. Sacar");
+            System.out.println("6. Sair");
 
             int escolha = Scanner.nextInt();
             Scanner.nextLine(); 
@@ -129,6 +134,15 @@ public class TesteOperacoes {
                     exibirSaldo(agencia, conta);
                     break;
                 case 4:
+                    System.out.println("Digite o número da conta");
+                    conta = Scanner.nextInt();
+                    System.out.println("Digite o número da Agencia");
+                    agencia = Scanner.nextInt();
+
+                break;
+                case 5:
+                break;
+                case 6:
                     System.out.println("Saindo do programa. Até mais!");
                     return;
                 default:
