@@ -41,22 +41,23 @@ public class TesteOperacoes {
             for(i=0;i<listaContas.size();i++){
                 if(listaContas.get(i).getConta()==conta &&listaContas.get(i).getAgencia()==agencia){
                     c = listaContas.get(i);
-                for(i=0;i<listaContas.size();i++){
-                if(listaContas.get(i).getConta()==conta2 &&listaContas.get(i).getAgencia()==agencia2){
-                    c2 = listaContas.get(i);
-                    System.out.println("Digite o valor a ser transferido");
-                        double valor = Scanner.nextDouble();
-                        c.transferencia(c2, valor);
-                  
-                }else{
-                    System.out.println("Conta Destinataria não encontrado");
-                }
-                  
-                }
-                }else{
-                    System.out.println("Conta remetente não encontrado");
-                }
-            }
+                
+                    for(int j=0;j<listaContas.size();j++){
+                        if(listaContas.get(j).getConta()==conta2 &&listaContas.get(j).getAgencia()==agencia2){
+                            c2 = listaContas.get(j);
+                            System.out.println("Digite o valor a ser transferido");
+                            double valor = Scanner.nextDouble();
+                            c.transferencia(c2, valor);
+                        
+                        }else{
+                            System.out.println("Conta Destinataria não encontrado");
+                        }
+                        
+                        }
+                        }else{
+                            System.out.println("Conta remetente não encontrado");
+                        }
+                        }
     }
     public static void exibirSaldo(int agencia,int conta){
         int i;
