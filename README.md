@@ -17,7 +17,7 @@ Listas de exercícios, atividades e provas da disciplina de **Programação Orie
 | `Atividade14/` | Exceções personalizadas | `SaldoInsuficienteException`, `DimensoesInvalidasException` |
 | `Atividade15/` | Interfaces e desacoplamento | `ModoVenda`, `NotificacaoVenda`, `VendaOnline`, `VendaLojaFisica` |
 | `Banco/` | Sistema bancário com herança | `Conta` → `ContaCorrente`, `ContaPoupanca`; `Cliente` |
-| `Prova3/` | Prova: interface e exceção | `IOperacoes`, `Usuario` → `Aluno`, `Professor`, `Coordenador` |
+| `Prova3/` | Prova: interface e exceção | `IOperacoes`, `Usuario` → `Aluno` e `Professor` → `Coordenador` |
 
 ## Como executar um exercício
 
